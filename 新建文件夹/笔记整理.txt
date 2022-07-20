@@ -1,0 +1,165 @@
+TypeScript的发展优缺点
+优点：1.TypeScript 增加了代码的可读性和可维护性（可以在编译阶段就发现大部分的错误、可以不全代码、接口提示、跳转到定义，重构等）
+2.包容性：它是javascript的超集（可以定义一切类型、兼容第三方库）
+3.兼容性强：有最新的ECMAScript标准、与时俱进
+4.编译步骤可以输出运行之前的错误
+缺点：有学习成本、短期内会增加开发成本、集成到构建流程需要一些工作量，可能和一些库结合的不是很完美
+
+js的数据类型：
+1.基本数据类型：
+布尔：Boolean（两个值true和false）
+空：Null（只有一个值null）
+未定义：Undefined（只有一个值undefined）
+数字：Number（现实中所有的数字）
+字符串：String（所有引号引起来的都是字符串）
+唯一：Symbol 代表创建后独一无二且不可变的数据类型，它主要是为了解决可能出现的全局变量冲突的问题。（ES6新增数据类型）
+大数据：Bigint 是一种数字类型的数据（ES6新增数据类型）
+2.引用数据类型
+对象：Object
+数组：Array
+函数：Function
+日期： Data
+
+TS的数据类型
+js：Number      ts：number
+number 定义数值类型：
+
+let decLiteral: number = 6 （十进制）
+
+let hexLiteral: number = 0xf00d  （十六进制）
+
+let binaryLiteral: number = 0b1010（ES6中的二进制）
+
+let octalLiteral: number = 0o744;（ES6中的八进制表示法）
+
+let notANumber: number = NaN;
+
+let infinityNumber: number = Infinity;（无穷大）
+
+
+布尔值类型(boolean)
+let isDone: boolean = false;
+
+字符串类型(string)
+let myName:string = '小红'
+let myAge: number = 12
+造句：
+let sentence = `My name is ${myName},My age is ${myAge}`
+document.body.innerHTML = sentence
+
+数组
+let array =[ ]
+第二种: new Array
+let array =  new Array()
+
+TypeScript像JavaScript一样可以操作数组元素。 有两种方式可以定义数组。
+第一种，可以在元素类型后面接上 `[ ]`，表示由此类型元素组成的一个数组,
+let list: number[ ] = [1,2,3,4]
+let listString: string[ ] = ['1','2','3']
+
+第二种,式是使用数组泛型，Array<元素类型>：
+let list: number[ ] = [1,2,3,]
+list.push(6)
+let listString: string[ ] = ['1','2','3']
+list.uunshif('9')
+let arrayList: Array<number> = [1,2,3]
+let stringList: Array<string> = ['1','2','3']
+
+undefined 和null 类型（它们既是实际的值，也是基本数据类型）
+let u: undefined = undefined;
+let n: null = null;
+
+对象(object)
+1. js中定义对象的方法
+
+第一种 {}
+typescript
+let object = {}
+
+第二种 new Object{}
+typescript
+let object = new Object()
+
+第三种 使用字面量方法创建对象
+typescript
+let person = {name: 'zhang', age:20}
+
+​第四种 工厂模式创建对象
+
+​第五种构造函数创建对象
+
+Object`表示非原始类型，也就是除`number`，`string`，`boolean`，`symbol`，`null`或`undefined`之外的类型。
+
+在ts中对象的使用
+declare function create(o:object | null) : void
+create({props: 0})
+create(null)
+
+let obj: {name: string}
+obj = {name: '小红', age: 13}
+
+元组 (Tuple)
+
+数组: 合并了相同类型的对象，长度不限制
+元组（Tuple）: 合并了不同类型的对象,已知长度
+  let tom: [string, number] = ['Tom', 25];
+
+枚举(enum)
+
+`enum`类型是对JavaScript标准数据类型的一个补充,使用枚举类型可以为一组数值赋予友好的名字。
+枚举
+ enum 当定义的变量越多,我们单独封装,会越好维护以后得项目,方便项目的查看
+
+enum Color {
+    Red = 1,
+    Blue = 2,
+    Green = 3
+}
+let c: Color = Color.Green;
+console.log(c) 
+ Any(any)
+
+any可以赋任何值
+	let value: any;
+	 value = 123;
+	 value = "abc";
+                   value = false;
+void类型
+	*1.不用return返回： function noReturn(): void {
+   			  console.log('My name is void');
+			}
+	*2.需要return返回：function haveReturn(): string {
+    			  return '55'
+			}
+never类型：
+	*1. 返回never的函数： function error(message: string): never {
+    			   throw new Error(message);
+			}
+	*2.推断： function fail() {
+   			return error("Something failed");
+		}
+
+        * 尖括号写类型断言
+        */
+        let someValue: any;
+        someValue = 123;
+        someValue = "dddd";
+        let someValueLength = (<string>someValue).length
+        ```
+    
+        2. as写法
+    
+            ```typescript
+            /**
+             * 第二种 作为as进行编写
+            */
+            let someName: any;
+            someName = 123
+            someName = '123'
+            let someNameValueLength = (someName as string).length
+            ```
+
+
+
+
+
