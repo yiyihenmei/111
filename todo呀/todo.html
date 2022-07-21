@@ -85,7 +85,9 @@
     // }
     // 清空
     qk.onclick=function(){
+        // 清空ul里面的内容
         ul.innerHTML=''
+        // 未完成数量修改成0
         span2.innerHTML = `未完成数量：0`
     }
 
@@ -105,21 +107,32 @@
 
         // 删除
         var a = document.querySelectorAll('a')
+        // 循环
         for (var i = 0; i < a.length; i++) {
             a[i].onclick = function () {
+                // 删除节点   语法：父节点.removeChild
                 ul.removeChild(this.parentNode)
+                // 调用未完成数量统计的函数
                 number()
             }
         }
+        // 获取所有复选框元素
         var fx=document.querySelectorAll('.fx')
+        // 循环 复选框的长度
         for(var i=0;i<fx.length;i++){
             fx[i].onclick=function(){
                 console.log(this.getAttribute('index'));
+                // 判断获取的属性值是否等于1 如果等于1
                 if(this.getAttribute('index')==1){
+                    // 父节点 li的颜色是
                     this.parentNode.style.color='rgba(237, 84, 204)'
+                    // ....背景色是
                     this.parentNode.style.backgroundColor='rgba(255, 255, 0, .5)'
+                    // 父节点 li的样式是删除线
                     this.parentNode.style.textDecoration = "line-through"
+                    // 设置属性值为2
                     this.setAttribute('index',2)
+                    
                     // console.log(this.getAttribute('index'));
                 }else if(this.getAttribute('index')==2){
                     this.parentNode.style.color='#000'
