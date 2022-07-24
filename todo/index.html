@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="b1">
+            <img class="img1" src="./image/111.jpg">
+            <div class="left-box">
+                <span class="s1">ToDoList</span>
+            </div>
+        </div>
+        <h3>~ Today l need to ~</h3>
+        <div class="b3">
+        <input class="ipt" type="text" placeholder="" onkeydown="zz(event)"><button class="btn1">Submit</button>
+        </div>
+        <ul>
+           
+        </ul>
+        <!-- <h4>暂无数据</h4> -->
+        <p><span class="a1">未完成数量:0</span><span class="a2" onclick="qb()">全部</span><span class="a3" onclick="wwc()">未完成</span><span class="a4" onclick="ywc()">已完成</span><span class="a5" onclick="xzsc()">清空</span></p>
+    </div>
+    
+</body>
+
+</html>
+<script src="./index.js"></script>
+<!-- <script>
+    function zz(e){
+        console.log(e);
+    }
+</script> -->
+<!-- <script>
+    // var arr = []
+    // var arr1 = []
+    var b = 0;
+    var a = 0;
+    var c = 0;
+    var ipt = document.querySelector('input')
+    var btn = document.querySelector('button')
+    var ul = document.querySelector('ul')
+    var body = document.querySelector('body')
+    var a1 = document.querySelector('.a1')
+    var a2 = document.querySelector('.a2')
+    var a3 = document.querySelector('.a3')
+    var a4 = document.querySelector('.a4')
+    var a5 = document.querySelector('.a5')
+    // if (localStorage.getItem('arr') == null) {
+    //     arr1 = []
+    //     console.log(arr);
+    // } else {
+    //     arr1 = JSON.parse(localStorage.getItem('arr'))
+    //     arr = arr1
+    //     console.log(arr);
+    //     for (var i = 0; i < arr1.length; i++) {
+    //         var a = 0
+    //         var li = document.createElement("li")
+    //         li.innerHTML = `<input type="checkbox" class="ipt1">${arr1[i]}<span>${ipt.value}</span><span class="aa" bb='${a++}'>x</span>`
+    //         ul.appendChild(li)
+    //     }
+    //     var ipt1 = document.querySelectorAll('.ipt1')
+    //     for (var i = 0; i < ipt1.length; i++) {
+    //         ipt1[i].setAttribute('ss', 1)
+    //         ipt1[i].onclick = function () {
+    //             console.log(this);
+    //             if (this.getAttribute('ss') == 1) {
+    //                 this.setAttribute('ss', 2)
+    //                 this.parentNode.style.background = "red"
+    //                 this.parentNode.style.color = "#fff"
+    //                 this.parentNode.style.textDecoration = 'line-through'
+    //             } else {
+    //                 this.setAttribute('ss', 1)
+    //                 this.parentNode.style.background = ""
+    //                 this.parentNode.style.color = "#000"
+    //                 this.parentNode.style.textDecoration = ''
+    //             }
+    //         }
+    //     }
+
+    // }
+    btn.onclick = function () {
+        // var ipt = document.querySelector('input')
+        // console.log(localStorage.getItem('arr'));
+        // arr.unshift(ipt.value)
+        // arr2 = JSON.stringify(arr)
+        // localStorage.setItem('arr', arr2)
+        if (ipt.value == '') {
+            alert('内容不能为空');
+            return
+        }
+        var li = document.createElement("li")
+        li.innerHTML = `<input type="checkbox" class="ipt1"><span>${ipt.value}</span><span class="aa" bb='${a++}'>x</span>`
+        console.log(li);
+        var li1 = document.querySelectorAll('li')
+        a1.innerHTML = a + 'item left'
+        ul.insertBefore(li, li1[0])
+        ipt.value = ''
+        var s2 = document.querySelectorAll('.aa')
+        var ipt1 = document.querySelectorAll('.ipt1')
+        for (var i = 0; i < s2.length; i++) {
+            s2[i].onclick = function () {
+                // var arr3 = JSON.parse(localStorage.getItem('arr'))
+                // var ee = this.getAttribute('aa')
+                // console.log(ee);
+                // arr3.splice(ee,1)
+                // JSON.stringify(localStorage.setItem('arr',arr3))
+                ul.removeChild(this.parentNode)
+                console.log(this);
+                a--
+                a1.innerHTML = a + 'item left'
+            }
+        }
+        for (var i = 0; i < ipt1.length; i++) {
+            var bb = 0
+            ipt1[i].setAttribute('ss', 1)
+            ipt1[i].onclick = function () {
+                console.log(this);
+                if (this.getAttribute('ss') == 1) {
+                    this.setAttribute('ss', 2)
+                    this.parentNode.style.background = "red"
+                    this.parentNode.style.color = "#fff"
+                    this.parentNode.style.textDecoration = 'line-through'
+                } else {
+                    this.setAttribute('ss', 1)
+                    this.parentNode.style.background = ""
+                    this.parentNode.style.color = "#000"
+                    this.parentNode.style.textDecoration = ''
+                }
+                for (var j = 0; j < ipt1.length; j++) {
+                    if (ipt1[j].getAttribute('ss') == 2) {
+                        // console.log(ipt1[j].getAttribute('ss'));
+                        bb++
+                        b = bb
+                    } else {
+                        c++
+                    }
+                }
+                if (b > 0) {
+                    a4.style.display = 'inline-block'
+                }
+                console.log(b);
+                var dd = 0;
+                var dsj = setInterval(() => {
+                    dd += 20;
+                    this.parentNode.style.transform = 'rotateX(' + dd + 'deg)';
+                    if (dd >= 360) {
+                        clearInterval(dsj)
+                    }
+                }, 10)
+
+            }
+        }
+
+        if (b > 0) {
+            a4.stylel.display = 'inline-block'
+        }
+        a2.onclick = function () {
+            var li1 = document.querySelectorAll('li')
+            for (var i = 0; i < li1.length; i++) {
+                li1[i].style.display = "block"
+            }
+        }
+        a3.onclick = function () {
+            var ipt1 = document.querySelectorAll('.ipt1')
+            for (var i = 0; i < ipt1.length; i++) {
+                if (ipt1[i].getAttribute('ss') == 2) {
+                    ipt1[i].parentNode.style.display = 'none'
+                } else {
+                    ipt1[i].parentNode.style.display = 'block'
+                }
+            }
+        }
+        a4.onclick = function () {
+            var ipt1 = document.querySelectorAll('.ipt1')
+            for (var i = 0; i < ipt1.length; i++) {
+                if (ipt1[i].getAttribute('ss') == 1) {
+                    ipt1[i].parentNode.style.display = 'none'
+                } else {
+                    ipt1[i].parentNode.style.display = 'block'
+                }
+
+            }
+        }
+        a5.onclick = function () {
+            var xx = 0;
+            for (var i = 0; i < ipt1.length; i++) {
+                if (ipt1[i].getAttribute('ss') == 2) {
+                    ul.removeChild(ipt1[i].parentNode)
+                } else {
+                    ipt1[i].parentNode.style.display = 'block'
+                    xx++
+                }
+            }
+            a1.innerHTML = xx + 'item left'
+        }
+    }
+    ipt.addEventListener('keyup', function (e) {
+        if (e.keyCode == 13) {
+            if (ipt.value == '') {
+                alert('内容不能为空');
+                return
+            }
+            var li = document.createElement("li")
+            li.innerHTML = `<input type="checkbox" class="ipt1"><span>${ipt.value}</span><span class="aa" bb='${a++}'>x</span>`
+            console.log(li);
+            var li1 = document.querySelectorAll('li')
+            a1.innerHTML = a + 'item left'
+            ul.insertBefore(li, li1[0])
+            ipt.value = ''
+            var s2 = document.querySelectorAll('.aa')
+            var ipt1 = document.querySelectorAll('.ipt1')
+            for (var i = 0; i < s2.length; i++) {
+                s2[i].onclick = function () {
+                    ul.removeChild(this.parentNode)
+                    console.log(this);
+                    a--
+                    a1.innerHTML = a + 'item left'
+                }
+            }
+            for (var i = 0; i < ipt1.length; i++) {
+                var bb = 0
+                ipt1[i].setAttribute('ss', 1)
+                ipt1[i].onclick = function () {
+                    console.log(this);
+                    if (this.getAttribute('ss') == 1) {
+                        this.setAttribute('ss', 2)
+                        this.parentNode.style.background = "red"
+                        this.parentNode.style.color = "#fff"
+                        this.parentNode.style.textDecoration = 'line-through'
+                    } else {
+                        this.setAttribute('ss', 1)
+                        this.parentNode.style.background = ""
+                        this.parentNode.style.color = "#000"
+                        this.parentNode.style.textDecoration = ''
+                    }
+                    for (var j = 0; j < ipt1.length; j++) {
+                        if (ipt1[j].getAttribute('ss') == 2) {
+                            // console.log(ipt1[j].getAttribute('ss'));
+                            bb++
+                            b = bb
+                        } else {
+                            c++
+                        }
+                    }
+                    if (b > 0) {
+                        a4.style.display = 'inline-block'
+                    }
+                    console.log(b);
+                    var dd = 0;
+                    var dsj = setInterval(() => {
+                        dd += 20;
+                        this.parentNode.style.transform = 'rotateX(' + dd + 'deg)';
+                        if (dd >= 360) {
+                            clearInterval(dsj)
+                        }
+                    }, 10)
+                }
+            }
+
+            if (b > 0) {
+                a4.style.display = 'inline-block'
+            }
+            a2.onclick = function () {
+                var li1 = document.querySelectorAll('li')
+                for (var i = 0; i < li1.length; i++) {
+                    li1[i].style.display = "block"
+                }
+            }
+            a3.onclick = function () {
+                var ipt1 = document.querySelectorAll('.ipt1')
+                for (var i = 0; i < ipt1.length; i++) {
+                    if (ipt1[i].getAttribute('ss') == 2) {
+                        ipt1[i].parentNode.style.display = 'none'
+                    } else {
+                        ipt1[i].parentNode.style.display = 'block'
+                    }
+                }
+            }
+            a4.onclick = function () {
+                var ipt1 = document.querySelectorAll('.ipt1')
+                for (var i = 0; i < ipt1.length; i++) {
+                    if (ipt1[i].getAttribute('ss') == 1) {
+                        ipt1[i].parentNode.style.display = 'none'
+                    } else {
+                        ipt1[i].parentNode.style.display = 'block'
+                    }
+
+                }
+            }
+            a5.onclick = function () {
+                var xx = 0;
+                for (var i = 0; i < ipt1.length; i++) {
+                    if (ipt1[i].getAttribute('ss') == 2) {
+                        ul.removeChild(ipt1[i].parentNode)
+                    } else {
+                        ipt1[i].parentNode.style.display = 'block'
+                        xx++
+                    }
+                }
+                a1.innerHTML = xx + 'item left'
+            }
+        }
+    })
+
+</script> -->
+<style>
+      .b3{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+      .btn1 {
+        width: 80px;
+        height: 32px;
+        -webkit-transform: rotate(5deg);
+        margin-left: 20px;
+        font-size: 16px;
+        box-shadow: 0 0 3px 0;
+        background-color: #fff;
+    }
+    body {
+        background-color: cadetblue;
+    }
+    ul{
+        padding: 0;
+    }
+
+    .box {
+        width: 500px;
+        margin: auto;
+        margin-top: 200px;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+        position: relative;
+        overflow: hidden;
+    }
+     .b1 {
+        width: 100%;
+        height: 140px;
+        border-bottom: 1px dashed #ccc;
+    }
+
+    .img1 {
+        width: 180px;
+        margin-left: 80px;
+        float: left;
+    }
+     .left-box {
+        width: 170px;
+        height: 40px;
+        float: left;
+        background-color: coral;
+        margin-left: 10px;
+        margin-top: 60px;
+        border-radius: 5px 5px 25px 5px;
+        -webkit-transform: rotate(5deg);
+    }
+
+    .s1 {
+        font-family: 华文行楷;
+        font-size: 40px;
+        text-align: center;
+        padding-left: 15px;
+        padding-top: 5px;
+        line-height: 40px;
+        color: #fff;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .ipt {
+        float: left;
+        display: block;
+        margin-left: 70px;
+        width: 250px;
+        height: 25px;
+        border: none;
+        border-bottom: 2px dashed coral;
+        background-color: #f5f5f5;
+        outline: none;
+        box-sizing: border-box;
+        padding-left: 5px;
+        padding-right: 15px;
+        color: hotpink;
+        caret-color: blue;
+
+    }
+
+    button {
+        margin-left: 10px;
+    }
+
+    .aa {
+        float: right;
+    }
+
+    li {
+        margin: 10px 10px;
+    }
+
+    .a3 {
+        margin: 0px 10px;
+    }
+
+    .a4 {
+        /* display: none; */
+        margin: 0px 10px;
+    }
+
+    .a2 {
+        margin: 0px 10px;
+    }
+    p{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+/* 
+    li {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    } */
+    .btn{
+        float: right;
+    }
+    li{
+        list-style: none;
+    }
+    h4{
+        display: block;
+    }
+</style>
