@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点名器</title>
+</head>
+
+<body>
+    <input type="text">
+    <button class="additem">点击按钮添加名单人员</button>
+    <ul>
+
+    </ul>
+    <button class="suiji">随机点名</button>
+    <button class="twoitem">随机选择两名</button>
+</body>
+
+</html>
+<script>
+    let itemarr = [
+            "师福齐",
+            "刘集聚",
+            "王彦凯",
+            "杨佳润",
+            "步旭阳",
+            "宁帅",
+            "张嘉宁",
+            "党少龙",
+            "李娅",
+            "李博",
+            "崔宇彤",
+            "高双娇",
+            "李沛沛",
+            "张旭",
+            "陈芸",
+            "李吉森",
+            "陈雯轩",
+            "包胜利",
+            "郑子轩",
+            "张嘉宁",
+            "文婷",
+            "郑国均",
+            "王帅琦",
+            "贾柏林",]
+    var ul = document.querySelector('ul')
+    var onest = document.querySelector('.suiji')
+    var timer = null
+    var timeid = 0
+    var times = 20
+    this.itemstyle(itemarr)
+    function itemstyle(arr) {
+        arr.forEach((item) => {
+            li = document.createElement('li')
+            li.innerHTML = `${item}`
+            li.setAttribute('class', 'itemli')
+            ul.appendChild(li)
+        });
+    }
+    let lis=document.querySelectorAll('li')
+    onest.onclick = function (timer) {
+        timer = setInterval(() => {
+            var x = lis.length - 1
+            var y = 0
+            var res = parseInt(Math.random() * (x - y + 1) + y)
+            timeid = res
+            lis.forEach(item => {
+                item.removeAttribute('id')
+            })
+            lis[res].setAttribute('id', 'get')
+            times--
+            if (times <= 1) {
+                clearInterval(timer)
+                times = 20
+            }
+        }, 100)
+    }
+    twost.onclick = function (timer) {
+        timer = setInterval(() => {
+            var x = lis.length - 1
+            var y = 0
+            var res = parseInt(Math.random() * (x - y + 1) + y)
+            timeid = res
+            lis.forEach(item => {
+                item.removeAttribute('id')
+            })
+            lis[res].setAttribute('id', 'get')
+            times--
+            if (times <= 1) {
+                clearInterval(timer)
+                times = 40
+            }
+        }, 50)
+    }
+
+</script>
+
+<style>
+    body {
+        width: 100%;
+        background-color: beige;
+    }
+
+    ul {
+        box-sizing: border-box;
+        padding-top: 50px;
+        outline: none;
+        width: 1200px;
+        height: 600px;
+        background-color: rgb(245, 253, 213);
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+
+    .itemli {
+        width: 120px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        list-style: none;
+        background-color: rgb(255, 174, 205);
+        margin: 10px;
+        color: #fff;
+        border-radius: 10px;
+    }
+
+    #get {
+        background-color: rgb(245, 176, 248);
+        color: rgb(0, 86, 30);
+    }
+
+    input,
+    .suiji {
+        width: 150px;
+        height: 20px;
+        margin-left: 100px;
+    }
+</style>
