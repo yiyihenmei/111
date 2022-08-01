@@ -1,0 +1,100 @@
+{
+    "studentList": [
+        {
+            "id": 1,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 2,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 3,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 4,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 5,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 6,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 7,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 8,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 9,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 10,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 11,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 12,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 13,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 14,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 15,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        },
+        {
+            "id": 16,
+            "name": "鸣人",
+            "sex": 0,
+            "checked": false
+        }
+    ]
+}

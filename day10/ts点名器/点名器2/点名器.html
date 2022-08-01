@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2110C点名器</title>
+</head>
+<body>
+    <div class="big">
+        <div class="center">
+            <div class="title">
+                <h1 class="listname">点名表</h1>
+                <p class="currentTime">时间：</p>
+            </div>
+            <!-- 名字 -->
+            <div class="content">
+                <!-- 名字渲染 -->
+                <ul class="ul1">
+
+                </ul>
+                <!-- 选中人的名字 -->
+                <div class="name2">
+                    <div class="content2">
+                           <span class="span1" style="color: aliceblue;font-size: 30px;">小倒霉蛋儿:</span>
+                           <span class="span2" id="name" class="nameStyle"></span>
+                    </div>
+                    <footer>
+                        <button onclick="oneStudent(event)" id="one">单人</button>
+                        <button onclick="downStudent(event)" id="two">双人</button>
+                        <button onclick="bodyOrGrilStudent(0,event)" id="three">男生</button>
+                        <button onclick="bodyOrGrilStudent(1,event)" id="four">女生</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="./index.js"></script>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-image: url(../aha/img/pick.gif);
+    }
+.big{
+    width: 1200px;
+    margin: auto;
+}
+.center{
+    width: 1000px;
+    height: 800px;
+    margin: auto;
+    margin-top: 100px;
+    background-color: rgb(63, 200, 200);
+}
+.listname{
+    text-align: center;
+    font-size: 35px;
+   background-image:linear-gradient(to bottom right,yellow,pink,rgb(243, 69, 162));
+   -webkit-background-clip: text;
+   background-clip:text;
+   color: transparent;
+}
+.liColor {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 26px;
+}
+.currentTime{
+    text-align: right;
+    font-size: 20px;
+    background-image:linear-gradient(to bottom right,yellow,pink,rgb(243, 69, 162));
+    -webkit-background-clip: text;
+    background-clip:text;
+    color: transparent;
+}
+ul{
+    margin: auto;
+    width: 80%;
+    /* background-color: coral; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 500px;
+    text-align: center;
+
+}
+.span2{
+    font-size: 25px;
+}
+li{
+    background-color: rgb(192, 241, 241);
+    list-style: none;
+    display: block;
+    line-height: 40px;
+    height: 40px;
+    width: 180px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.content{
+    margin: auto;
+    width: 100%;
+}
+button {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    color: #606266;
+    -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    transition: .1s;
+    font-weight: 500;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    color: rgb(247, 155, 155);
+    background-color: #eff6c2;
+    border-color: #67c23a;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin-right: 20px;
+}
+.name2{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.content2{
+    width: 100%;
+    margin: auto;
+}
+footer{
+    width: 100%;
+    margin-top: 20px;
+}
+.namestyle{
+     background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 60px;
+    font-weight: bold;
+}
+.liColor {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 26px;
+}
+.nameStyle {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 60px;
+    font-weight: bold;
+}
+</style>

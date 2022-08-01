@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B卷</title>
+</head>
+
+<body>
+    <div class="div1">
+        <header>
+            <h3>
+                用户登录
+            </h3>
+            <a class="a" href="#javascript:;" onclick="qhzt()">切换主题</a>
+        </header>
+        <section>
+            <ul class="dlul">
+                <li class="dlli">
+                    手机号： <input type="text" class="input1" onkeyup="use(this)">
+                    <span style="color: red; display: none;">X</span>
+                    <span style="color: green; display: none;">√</span>
+                </li>
+                <li class="dlli">
+                    密 &nbsp;&nbsp; 码：<input type="text" class="input1" onkeyup="psw(this)">
+                    <span style="color: red; display: none;">X</span>
+                    <span style="color: green; display: none;">√</span>
+                </li>
+            </ul>
+            <button class="dl" onclick="dl()" disabled>登录</button><br>
+        </section>
+    </div>
+    <div class="div2">
+        <header>
+            <h3>
+                图书商城
+            </h3>
+            <a class="a" href="#javascript:;" onclick="gomy()">我的书架</a>
+        </header>
+        <section>
+            <input type="text" class="sousuo" placeholder="搜索" onkeyup="sou(this)">
+            <ul class="ul2">
+
+            </ul>
+        </section>
+    </div>
+    <div class="div3">
+        <header>
+            <h3>
+                我的书架
+            </h3>
+            <p class="aa" onclick="fanhui()">
+                ←
+            </p>
+        </header>
+        <section>
+            <p onclick="zkzzk(this)" class="p1">正在看 <span class="span2">&gt;</span></p>
+            <ul class="ul3">
+
+            </ul>
+            <p onclick="zkywj(this)" class="p1">已完结 <span class="span2">&gt;</span></p>
+            <ul class="ul4">
+
+            </ul>
+        </section>
+    </div>
+    <div>
+        <h4>加入成功</h4>
+        <h4>此书已存在</h4>
+    </div>
+</body>
+<script src="./index.js"></script>
+
+</html>
+<style>
+    .zfspan {
+        float: left;
+    }
+
+    .myspan {
+        color: red;
+    }
+
+    .rem {
+        color: rgb(151, 151, 151);
+    }
+
+    .p1 {
+        background-color: red;
+        width: 100%;
+        line-height: 40px;
+        text-align: center;
+        position: relative;
+        color: #fff;
+    }
+
+    .span2 {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+        color: #fff;
+    }
+
+    .ul3 {
+        display: none;
+    }
+
+    .ul4 {
+        display: none;
+    }
+
+    h4 {
+        display: none;
+        text-align: center;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, .5);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        border-radius: 10px;
+    }
+
+    .descspan {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        width: 183px;
+        height: 30px;
+    }
+
+    .add {
+        background-color: goldenrod;
+        color: #000;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 20px;
+        border: 0;
+    }
+
+    .ul2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+    }
+
+    .li2 {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 49%;
+        margin-top: 5px;
+    }
+
+    .namespan {
+        color: red;
+    }
+
+    img {
+        width: 100%;
+        height: 245px;
+    }
+
+    .sousuo {
+        width: 100%;
+        height: 30px;
+        background-color: rgb(200, 200, 200);
+        color: #fff;
+    }
+
+    .sousuo:-ms-input-placeholder {
+        color: #fff;
+    }
+
+    .div2 {
+        display: none;
+    }
+
+    .div3 {
+        display: none;
+    }
+
+    .yin {
+        display: none !important;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    .xian {
+        display: block !important;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    h3 {
+        text-align: center;
+        margin: 0;
+        color: #fff;
+    }
+
+    .a {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0%, -50%);
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .aa {
+        position: absolute;
+        left: 0;
+        top: 10%;
+        transform: translate(0%, -50%);
+        color: #fff;
+        font-size: 20px;
+    }
+
+    header {
+        line-height: 50px;
+        background-color: coral;
+        position: relative;
+    }
+
+    section {
+        text-align: center;
+    }
+
+    .dlli {
+        list-style: none;
+        margin-top: 10px;
+        position: relative;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .input1 {
+        width: 200px;
+        line-height: 30px;
+    }
+
+    .dl {
+        text-align: center;
+        width: 150px;
+        height: 50px;
+        border-radius: 10px;
+        border: 0;
+        background-color: rgb(193, 193, 193);
+        color: #fff;
+    }
+</style>
